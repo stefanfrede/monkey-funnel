@@ -1,0 +1,173 @@
+/* CUSTOM PROPERTIES */
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, blinkmacsystemfont,
+    'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: ui-serif, georgia, cambria, 'Times New Roman', times, serif;
+  --font-mono: ui-monospace, sfmono-regular, menlo, monaco, consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  --color-900: #111827;
+  --color-800: #1f2937;
+  --color-700: #374151;
+  --color-600: #4b5563;
+  --color-500: #6b7280;
+  --color-400: #9ca3af;
+  --color-300: #d1d5db;
+  --color-200: #e5e7eb;
+  --color-100: #f3f4f6;
+  --color-050: #f9fafb;
+  --ratio: 1.25;
+  --s-5: calc(
+    var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) /
+      var(--ratio)
+  );
+  --s-4: calc(
+    var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio)
+  );
+  --s-3: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio));
+  --s-2: calc(var(--s0) / var(--ratio) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s0) * var(--ratio) * var(--ratio));
+  --s3: calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio));
+  --s4: calc(
+    var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio)
+  );
+  --s5: calc(
+    var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) *
+      var(--ratio)
+  );
+  --measure: 65ch;
+  --line-height: var(--ratio);
+  --line-height-small: calc(0.8 * var(--ratio));
+  --border-thin: var(--s-5);
+  --border-thick: var(--s-2);
+}
+
+/* RESET */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+ol[role='list'],
+ul[role='list'] {
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  background-color: var(--color-900);
+  color: var(--color-100);
+  font-family: var(--font-sans);
+  font-size: calc(0.333vw + 1em);
+  line-height: var(--ratio);
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  ::after,
+  ::before {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  hyphens: auto;
+  line-height: var(--line-height-small);
+}
+
+h1 {
+  font-size: var(--s5);
+}
+
+h2 {
+  font-size: var(--s4);
+}
+
+h3 {
+  font-size: var(--s3);
+}
+
+h4 {
+  font-size: var(--s2);
+}
+
+h5 {
+  font-size: var(--s1);
+}
+
+h6 {
+  font-size: var(--s0);
+}
+
+small,
+.text_small {
+  font-size: var(--s-1);
+}
+
+main {
+  padding: var(--s2);
+}
+
+.center {
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--measure);
+}

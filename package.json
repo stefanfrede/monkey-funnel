@@ -1,0 +1,80 @@
+{
+  "name": "monkey-funnel",
+  "description": "A Web Component to collect information through a sales funnel.",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">= 15.7.0",
+    "yarn": "^2.4.0"
+  },
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:stefanfrede/monkey-funnel.git"
+  },
+  "keywords": [
+    "web components",
+    "snowpack"
+  ],
+  "author": {
+    "name": "Stefan Frede",
+    "email": "stefan@frede.dev"
+  },
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "bugs": {
+    "url": "https://github.com/stefanfrede/monkey-funnel/issues"
+  },
+  "homepage": "https://monkey-funnel.netlify.app",
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{css,js,html}": "stylelint --fix",
+    "*.{js,html}": "eslint --fix"
+  },
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "lint": "concurrently \"npm:lint:*\"",
+    "lint:eslint": "eslint --ext .js components/",
+    "lint:stylelint": "stylelint components/**/*.js",
+    "format": "concurrently \"npm:format:*\"",
+    "format:eslint": "eslint --ext .js components/ --fix",
+    "format:stylelint": "stylelint components/**/*.js"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@snowpack/plugin-postcss": "^1.1.0",
+    "autoprefixer": "^10.2.4",
+    "browserslist": "^4.14.3",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-html": "^6.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "husky": "^5.0.9",
+    "lint-staged": "^10.4.0",
+    "postcss": "^8.2.5",
+    "postcss-cli": "^8.3.1",
+    "postcss-normalize": "^9.0.0",
+    "prettier": "^2.1.2",
+    "snowpack": "^3.0.11",
+    "stylelint": "^13.9.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0"
+  }
+}
