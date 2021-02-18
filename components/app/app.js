@@ -7,8 +7,6 @@ export default class App extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = Template.render();
     this.dom = Template.mapDOM(this.shadowRoot);
-
-    console.log(this.dom.foobar);
   }
 }
 

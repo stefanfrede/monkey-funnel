@@ -1,4 +1,5 @@
-import '../foobar/foobar.js';
+import '../reel/reel.js';
+import '../reel-item/reel-item.js';
 
 export default {
   render() {
@@ -10,7 +11,8 @@ export default {
 
   mapDOM(scope) {
     return {
-      foobar: scope.querySelector('mf-foobar'),
+      reel: scope.querySelector('mf-reel'),
+      reelItem: scope.querySelector('mf-reel-item'),
     };
   },
 
@@ -19,7 +21,11 @@ export default {
       <div class="stack">
         <h1>Monkey Funnel</h1>
         <p>A sales funnel web component.</p>
-        <mf-foobar></mf-foobar>
+        <mf-reel>
+          <mf-reel-item></mf-reel-item>
+          <mf-reel-item></mf-reel-item>
+          <mf-reel-item></mf-reel-item>
+        </mf-reel>
       </div>
     `;
   },
