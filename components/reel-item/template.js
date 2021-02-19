@@ -35,7 +35,6 @@ export default {
           justify-content: center;
           padding: var(--s1);
           text-transform: uppercase;
-          width: calc(var(--measure) - (var(--s2) * 2));
         }
       </style>
     `;

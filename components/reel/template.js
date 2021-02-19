@@ -36,7 +36,7 @@ export default {
         }
 
         .reel::-webkit-scrollbar {
-          height: 1rem;
+          height: 0.75rem;
         }
 
         .reel::-webkit-scrollbar-track {
@@ -44,12 +44,11 @@ export default {
         }
 
         .reel::-webkit-scrollbar-thumb {
-          background-color: var(--color-900);
-          background-image: linear-gradient(var(--color-900) 0, var(--color-900) 0.25rem, var(--color-100) 0.25rem, var(--color-100) 0.75rem, var(--color-900) 0.75rem);
+          background-color: var(--color-100);
         }
 
         .reel > ::slotted(mf-reel-item) {
-          flex: 0 0 auto;
+          flex: 0 0 calc(var(--measure) - (var(--s2) * 2));
         }
 
         .reel > ::slotted(mf-reel-item) {
